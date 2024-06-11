@@ -89,3 +89,88 @@ então todos os botões são excluidos
     ${vazio}    Get Text               //div[@id="elements"]
     Log To Console    ${vazio}
     Should Be Empty    ${vazio}
+
+#Validar aprsentação da mensagem Not authorized
+que o pop up Fazer login esteja sendo apresentado
+    Click    div#content.large-12.columns li:nth-child(3) a
+    
+clico no botão Cancelar
+    Promise To    Wait For Alert    action=accept    prompt_input="hello hello hello hello"
+    
+    Click    id=promtButton
+
+é apresentada a mensagem
+    ${texto}    Get Text    body
+    Log To Console    ${texto}
+    Should Be Equal    Not authorized     ${texto}
+    
+#Validar alteração do numero gerado
+que acesso a pagina Challenging DOM
+    Click    //*[@id="content"]/ul/li[5]/a
+
+a tabela é carregada
+    Wait For Elements State    css=div.columns.large-10 table
+
+identifico na tabela o elemento
+    ${elemento}  Get Table Cell Element    css=div.columns.large-10 table    "Dolor"    "Adipisci4"
+    ${nome}      Get Text     ${elemento}  ==  Adipisci4
+    Should Be Equal    ${nome}    Adipisci4
+
+#Coluna "Diceret" deve ser apresentado na tabela
+identifico na tabela a coluna
+    #${elemento}    Get Table Cell Index    css=div.columns.large-10 table >> "Diceret"
+    #Log To Console    ${elemento}
+    #${num}    Convert To Integer    5
+    #Should Be Equal    ${elemento}    ${num}
+    Get Table Cell Index    css=div.columns.large-10 table >> "Diceret"    ==    5
+
+#Linha "Diceret" deve ser apresentado na tabela
+identifico na tabela a linha
+    #${elemento}    Get Table Row Index    css=div.columns.large-10 table >> "Iuvaret9"
+    #Log To Console    ${elemento}
+    #${num}    Convert To Integer    10
+    #Should Be Equal    ${elemento}    ${num}
+    Get Table Row Index    css=div.columns.large-10 table >> "Iuvaret9"    ==    10
+
+#Desmarcar "CheckBox"
+que acesso a tela checkboxes
+    Click    css=[href='/checkboxes']
+    Take Screenshot
+
+dou um check no checkbox2
+    Uncheck Checkbox        xpath=//*[@id="checkboxes"]/input[2]
+    Take Screenshot
+
+é desmarcado o chechbox2
+    ${res}    Get Checkbox State    xpath=//*[@id="checkboxes"]/input[2]
+    ${False}    Convert To Boolean    False
+    Should Be Equal    ${res}    ${False}
+
+#Marcar checkbox  
+dou um check no checkbox1
+    Check Checkbox    xpath=//*[@id="checkboxes"]/input[1]
+    Take Screenshot    
+    Sleep    3
+o chechbox1 é marcado
+    ${res}    Get Checkbox State    xpath=//*[@id="checkboxes"]/input[1]
+    ${True}    Convert To Boolean    True
+    Should Be Equal    ${res}    ${True}
+    Take Screenshot
+    Sleep    3
+
+#Trocar a posição do elemento A pelo elemento B
+que acesso a tela Drag and Drop
+    Click    css=[href='/drag_and_drop']
+
+movimento o elemento A para a posição do elemento B
+    
+    Drag And Drop     css=#column-a      css=#column-b
+    Sleep    3
+    Take Screenshot
+    
+o elemento A fica na posição do elemento B
+    ${col_A}    Get Text        css=#column-a
+    ${col_B}    Get Text    css=#column-b
+    Should Be Equal    ${col_A}    B    
+    Should Be Equal    ${col_B}    A
+    
