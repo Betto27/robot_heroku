@@ -33,7 +33,7 @@ jobs:
           
       - name: Run Testes Heroku
         run: |
-            robot -d ./results -v HEADLESS:true -v BROWSER:${{ matrix.browser }  cenarios
+            robot -d ./results -v HEADLESS:true -v BROWSER:${{ matrix.browser }}  cenarios
 
       - name: Upload Tests Results
         if: always()
