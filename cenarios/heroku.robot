@@ -40,3 +40,38 @@ Validar exclusão dos botões adicionados
     Given que tenha adicionado 4 botões Delete
     When clico 4 vezes no botão delete
     Then então todos os botões são excluidos
+
+#Validar aprsentação da mensagem Not authorized
+#    Given que o pop up Fazer login esteja sendo apresentado
+#    When clico no botão Cancelar
+#    Then é apresentada a mensagem
+
+Elemento "Adipisci4" deve ser apresentado na tabela
+    Given que acesso a pagina Challenging DOM
+    When a tabela é carregada 
+    Then identifico na tabela o elemento     #Adipisci4
+
+Coluna "Diceret" deve ser apresentado na tabela
+    Given que acesso a pagina Challenging DOM
+    When a tabela é carregada
+    Then identifico na tabela a coluna     #Diceret
+
+Linha "Diceret" deve ser apresentado na tabela
+    Given que acesso a pagina Challenging DOM
+    When a tabela é carregada
+    Then identifico na tabela a linha     #Iuvaret9 Apeirian9 Adipisci9
+
+Desmarcar "CheckBox"
+    Given que acesso a tela checkboxes
+    When dou um check no checkbox2
+    Then é desmarcado o chechbox2
+
+Marcar checkbox
+    Given que acesso a tela checkboxes
+    When dou um check no checkbox1
+    Then o chechbox1 é marcado
+
+Trocar a posição do elemento A pelo elemento B
+    Given que acesso a tela Drag and Drop
+    When movimento o elemento A para a posição do elemento B
+    Then o elemento A fica na posição do elemento B
