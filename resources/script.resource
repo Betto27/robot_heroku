@@ -189,11 +189,11 @@ clico no link "click here"
 é atualizado a imagem a/ou texto
     
     #Chama o arquivo comparar imagens da pasta Components passando os parametros para execução da função que faz o download das imagens
-    Comparar imagens    ${IMAGE_XPATH}    ${url_img}    ${DOWNLOADED_IMAGE}
+    comparar imagens    ${IMAGE_XPATH}    ${url_img}    ${DOWNLOADED_IMAGE}
     #Clica no link para gerar uma nova imagem
     Click    [href='/dynamic_content?with_content=static']
     #Chama o arquivo comparar imagens da pasta Components passando os parametros para execução da função que faz o download das imagens
-    Comparar imagens    ${IMAGE_XPATH}    ${url_img}    ${DOWNLOADED_IMAGE2}
+    comparar imagens    ${IMAGE_XPATH}    ${url_img}    ${DOWNLOADED_IMAGE2}
     #Chama o arquivo pyhton COMPARE_IMAGAGES passando os parametros para execução e faz a comparação das imagens para saber se são iguais ou diferentes
     ${result}=    Run Process    python    compare_images.py    ${DOWNLOADED_IMAGE}    ${DOWNLOADED_IMAGE2}    stdout=True    stderr=True
     #Should Contain    ${result.stdout}    Images are identical

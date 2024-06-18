@@ -8,7 +8,6 @@ Comparar imagens
     
     ${image_url}=        Get Attribute    ${IMAGE_XPATH}    src
     ${image_url}=    Catenate    SEPARATOR=    ${url_img}    ${image_url}
-    Log To Console        ${image_url}
     #Directory Should Not Exist    downloads
     Create Directory    downloads
     Create Session    mysession    ${image_url}
