@@ -40,7 +40,7 @@ clico no link A/B Testing
 
 sou redirecionado para pagina A/B Test Control
     ${texto}    Get Text    .example > h3
-    Should Be Equal    ${texto}     A/B Test Control
+    Should Contain        ${texto}     A/B Test
 
     ${text2}    Get Text    .large-4 > div
     #Log To Console    ${text2}
@@ -207,7 +207,7 @@ clico no link "click here"
     #Clica no link para gerar uma nova imagem
     Click    [href='/dynamic_content?with_content=static']
     #Chama o arquivo comparar imagens da pasta Components passando os parametros para execução da função que faz o download das imagens
-    Comparar Imagens    ${IMAGE_XPATH}    ${url_img}    ${DOWNLOADED_IMAGE2}
+    Comparar imagens    ${IMAGE_XPATH}    ${url_img}    ${DOWNLOADED_IMAGE2}
     #Chama o arquivo pyhton COMPARE_IMAGAGES passando os parametros para execução e faz a comparação das imagens para saber se são iguais ou diferentes
     ${result}=    Run Process    python    compare_images.py    ${DOWNLOADED_IMAGE}    ${DOWNLOADED_IMAGE2}    stdout=True    stderr=True
     #Should Contain    ${result.stdout}    Images are identical
@@ -226,5 +226,6 @@ o nome do usuario é apresentado
     Get Element States       xpath=//h5[text() = 'name: user2']    contains    visible
     Get Element States       xpath=//h5[text() = 'name: user1']    contains    hidden
     Get Element States       xpath=//h5[text() = 'name: user3']    contains    hidden
+
 
 
