@@ -90,3 +90,4 @@ Validar apresentação do nome "User2" ao passar o mouse sobre a imagem
     Given que acesso a pagina "Hovers"
     When passo o mouse sobre a imagem 2
     Then o nome do usuario é apresentado
+
