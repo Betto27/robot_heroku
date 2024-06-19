@@ -3,7 +3,7 @@
 Documentation    Função que faz o download das imagens a serem comparadas e exclui a pasta downloads
 
 *** Keywords ***
-comparar imagens
+Comparar_imagens
     [Arguments]    ${IMAGE_XPATH}    ${url_img}    ${DOWNLOADED_IMAGE}
     
     ${image_url}=        Get Attribute    ${IMAGE_XPATH}    src
