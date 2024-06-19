@@ -52,7 +52,7 @@ jobs:
 
       - name: Send Report
         if: always()
-        uses: joonvena/robotframework-reporter-action@v2.4
+        uses: joonvena/robotframework-reporter-action@v2
         with:
           report_path: results-${{ matrix.browser }}
           gh_access_token: ${{ secrets.GITHUB_TOKEN }}
