@@ -7,7 +7,7 @@ Library    OperatingSystem
 Library    RequestsLibrary
 
 Resource    ../resources/variaveis.resource
-Resource    ../resources/Components/Comparar_imagens.resource
+Resource    ../resources/components/Comparar_imagens.resource
 
 *** Keywords ***
 
