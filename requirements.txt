@@ -1,2 +1,3 @@
 Robotframework
 robotframework-browser
+robotframework-requests
